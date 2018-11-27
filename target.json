@@ -45,7 +45,7 @@
         {
             "name":"codal-stm32",
             "url":"https://github.com/lancaster-university/codal-stm32",
-            "branch":"master",
+            "branch":"f1",
             "type":"git"
         }
     ]
