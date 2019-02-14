@@ -29,7 +29,8 @@ DEALINGS IN THE SOFTWARE.
 #include "codal-core/inc/types/Event.h"
 #include "CodalDevice.h"
 #include "ErrorNo.h"
-#include "ZTimer.h"
+#include "Timer.h"
+#include "STMLowLevelTimer.h"
 #include "CodalCompat.h"
 #include "CodalComponent.h"
 #include "CodalDmesg.h"
@@ -67,7 +68,8 @@ namespace codal
     class BrainPad : public CodalComponent
     {
         public:
-            ZTimer         timer;
+            STMLowLevelTimer lowLevel;
+            Timer         timer;
             MessageBus                  messageBus;
             BrainPadIO                  io;
             ZSPI                        spi;

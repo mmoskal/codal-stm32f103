@@ -37,7 +37,8 @@ static BrainPad *device_instance = NULL;
   * that represent various device drivers used to control aspects of the micro:bit.
   */
 BrainPad::BrainPad() :
-    timer(),
+    lowLevel(TIM5, TIM5_IRQn),
+    timer(lowLevel),
     messageBus(),
     io(),
     spi(io.mosi, io.miso, io.sck),
@@ -81,8 +82,6 @@ int BrainPad::init()
         return DEVICE_NOT_SUPPORTED;
 
     status |= DEVICE_INITIALIZED;
-
-    timer.init();
 
     // Bring up fiber scheduler.
     scheduler_init(messageBus);
