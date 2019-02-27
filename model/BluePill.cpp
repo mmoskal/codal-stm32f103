@@ -37,7 +37,7 @@ static BluePill *device_instance = NULL;
   * that represent various device drivers used to control aspects of the micro:bit.
   */
 BluePill::BluePill() :
-    lowLevel(TIM5, TIM5_IRQn),
+    lowLevel(TIM4, TIM4_IRQn),
     timer(lowLevel),
     messageBus(),
     io(),
